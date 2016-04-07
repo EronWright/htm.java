@@ -61,6 +61,7 @@ public class KryoSerializer<T> extends Serializer<T> implements Serializable {
             }
 
             writer.writeObject(t, t.getClass());
+            writer.flush();
         }
         catch(IOException e) {
             throw new KryoException(e);
